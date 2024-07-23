@@ -1,23 +1,22 @@
 class Viewport_Page{
-    // is displayed
+
+    //is displayed
     static is_viewport_title_displayed(){
         return cy.get('.home-list')
         .find('[href="/commands/viewport"]')
         .parent()
         .contains('Viewport')
-        // .should('be.visible')
     }
 
-    // click
+    //click
     static click_viewport_title(){
-        return cy.get('.home-list')
+       return cy.get('.home-list')
         .find('[href="/commands/viewport"]')
         .parent()
         .contains('Viewport')
-        // .click()
     }
 
-    // get
+    //get
     static get_header_text(){
         return cy.get('h1')
     }

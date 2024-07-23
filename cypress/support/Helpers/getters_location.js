@@ -4,7 +4,7 @@ export function get_location_title_from_landing_page() {
     return new Cypress.Promise((resolve) => {
         cy.get('.home-list')
             .find('[href="/commands/location"]')
-            .first()
+            .contains('Location')
             .then((title) => {
                 resolve(title.text());
             });
@@ -14,7 +14,7 @@ export function get_location_title_from_landing_page() {
 export function get_location_title_from_location_page() {
     return new Cypress.Promise((resolve) => {
         cy.get('.container')
-        find('h1')
+        .find('h1')
             .then((title) => {
                 resolve(title.text());
             });
