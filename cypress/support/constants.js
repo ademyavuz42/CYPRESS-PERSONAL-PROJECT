@@ -3,7 +3,6 @@ const CYPRESS_ATTRIBUTES = {
         PAGE_LOAD:60000,
     },
     GENERAL: {
-
     }
 }
 export default CYPRESS_ATTRIBUTES;

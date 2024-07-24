@@ -1,6 +1,5 @@
 import Viewport_Page from "../../pages/Viewport_Page";
 
-
 const environment = Cypress.env(`environment`);
 const domain = Cypress.env().test.baseUrl;
 
@@ -14,8 +13,7 @@ let user;
 
             const title = user.general.title;
             cy.is_website_load_successfully(domain,title)
-        })
-        
+        })   
     })
 
     it('The headers should be same', async () => {
