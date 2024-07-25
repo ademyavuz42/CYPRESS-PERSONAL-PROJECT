@@ -50,7 +50,5 @@ describe('Querying Tests', () => {
         cy.get('.query-ul').within(()=>{
             cy.root().should('have.class','query-ul')
         })
-
     })
-
 })
