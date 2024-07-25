@@ -17,17 +17,17 @@ describe('Actions Tests', () => {
     })
 
     // To get the global window object, use the cy.window() command.
-    it('Test traversal cy.window() command', () => {
+    it('Test window cy.window() command', () => {
         cy.window().should('have.property', 'top')
     })
 
     // To get the document object, use the cy.document() command.
-    it('Test traversal cy.document() command', () => {
+    it('Test window cy.document() command', () => {
         cy.document().should('have.property','charset').and('eq','UTF-8')
     })
 
      // To get the title, use the cy.title() command.
-     it('Test traversal cy.title() command', () => {
+     it('Test window cy.title() command', () => {
         cy.title().should('include','Kitchen')
     })
 })

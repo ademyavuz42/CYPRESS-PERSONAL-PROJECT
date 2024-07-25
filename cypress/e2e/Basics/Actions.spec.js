@@ -17,7 +17,7 @@ describe('Actions Tests', () => {
     })
 
     // To type into a DOM element, use the .type() command.
-    it('Test traversal .type() command', () => {
+    it('Test action .type() command', () => {
         cy.get('.action-email').type('fake@email.com')
         cy.get('.action-email').should('have.value', 'fake@email.com')
         cy.get('.action-email').type('{leftarrow}{rightarrow}{uparrow}{downarrow}')
@@ -33,7 +33,7 @@ describe('Actions Tests', () => {
     })
 
     // To focus on a DOM element, use the .focus() command.
-    it('Test traversal .focus() command', () => {
+    it('Test action .focus() command', () => {
         cy.get('.action-focus').focus()
         cy.get('.action-focus').should('have.class', 'focus').prev().should('have.attr', 'style', 'color: orange;')
     })
@@ -46,7 +46,7 @@ describe('Actions Tests', () => {
     })
 
     // To clear on a DOM element, use the .clear() command.
-    it('Test traversal .clear() command', () => {
+    it('Test action .clear() command', () => {
         cy.get('.action-clear').type('Clear this text')
         cy.get('.action-clear').should('have.value', 'Clear this text')
         cy.get('.action-clear').clear()
@@ -54,14 +54,14 @@ describe('Actions Tests', () => {
     })
 
     // To submit a form, use the cy.submit() command.
-    it('Test traversal cy.submit() command', () => {
+    it('Test action cy.submit() command', () => {
         cy.get('.action-form').find('[type="text"]').type('HALFOFF')
         cy.get('.action-form').submit()
         cy.get('.action-form').next().should('contain', 'Your form has been submitted!')
     })
 
     // To click a DOM element, use the .click() command.
-    it('Test traversal .click() command', () => {
+    it('Test action .click() command', () => {
         cy.get('.action-btn').click()
         cy.get('#action-canvas').click()
         cy.get('#action-canvas').click('topLeft')
@@ -86,21 +86,21 @@ describe('Actions Tests', () => {
     })
 
     // To double click a DOM element, use the .dblclick() command.
-    it('Test traversal .dblclick() command', () => {
+    it('Test action .dblclick() command', () => {
         cy.get('.action-div').dblclick()
         cy.get('.action-div').should('not.be.visible')
         cy.get('.action-input-hidden').should('be.visible')
     })
 
     // To right click a DOM element, use the .rightclick() command.
-    it('Test traversal .rightclick() command', () => {
+    it('Test action .rightclick() command', () => {
         cy.get('.rightclick-action-div').rightclick()
         cy.get('.rightclick-action-div').should('not.be.visible')
         cy.get('.rightclick-action-input-hidden').should('be.visible')
     })
 
     // To check a checkbox or radio, use the .check() command.
-    it('Test traversal .check() command', () => {
+    it('Test action .check() command', () => {
         cy.get('.action-checkboxes [type="checkbox"]').not('[disabled]').check()
         cy.get('.action-checkboxes [type="checkbox"]').not('[disabled]').should('be.checked')
         cy.get('.action-radios [type="radio"]').not('[disabled]').check()
@@ -116,7 +116,7 @@ describe('Actions Tests', () => {
     })
 
     // To uncheck a checkbox or radio, use the .uncheck() command.
-    it('Test traversal .uncheck() command', () => {
+    it('Test action .uncheck() command', () => {
         cy.get('.action-check [type="checkbox"]').not('[disabled]').uncheck()
         cy.get('.action-check [type="checkbox"]').not('[disabled]').should('not.be.checked')
         cy.get('.action-check [type="checkbox"]').check('checkbox1')
@@ -131,7 +131,7 @@ describe('Actions Tests', () => {
     })
 
     // To select an option in a select, use the .select() command.
-    it('Test traversal .select() command', () => {
+    it('Test action .select() command', () => {
         cy.get('.action-select').should('have.value','--Select a fruit--')
         cy.get('.action-select').select('apples')
         cy.get('.action-select').should('have.value','fr-apples')
@@ -141,7 +141,7 @@ describe('Actions Tests', () => {
     })
 
     // To scroll an element into view, use the .scrollintoview() command.
-    it('Test traversal .scrollintoview() command', () => {
+    it('Test action .scrollintoview() command', () => {
         cy.get('#scroll-horizontal button').should('not.be.visible')
         cy.get('#scroll-horizontal button').scrollIntoView()
         cy.get('#scroll-horizontal button').should('be.visible')
@@ -154,7 +154,7 @@ describe('Actions Tests', () => {
     })
 
     // To scroll the window or a scrollable element to a specific position, use the cy.scrollTo() command.
-    it('Test traversal cy.scrollTo() command', () => {
+    it('Test action cy.scrollTo() command', () => {
         cy.scrollTo('bottom')
         cy.get('#scrollable-horizontal').scrollTo('right')
         cy.get('#scrollable-vertical').scrollTo(250,250)
@@ -164,7 +164,7 @@ describe('Actions Tests', () => {
     })
 
     // To trigger an event on a DOM element, use the .trigger() command.
-    it('Test traversal .trigger() command', () => {
+    it('Test action .trigger() command', () => {
         cy.get('.trigger-input-range').invoke('val', 25)
         cy.get('.trigger-input-range').trigger('change')
         cy.get('.trigger-input-range').get('input[type="range"]').siblings('p').should('have.text','25')
