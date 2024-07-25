@@ -16,7 +16,7 @@ describe('Actions Tests', () => {
     })
 
     // To go back or forward in the browser's history, use the cy.go() command.
-    it('Test traversal cy.go() command', () => {
+    it('Test navigation cy.go() command', () => {
         cy.location('pathname').should('include','navigation')
         cy.go('back')
         cy.location('pathname').should('not.include','navigation')
@@ -29,20 +29,18 @@ describe('Actions Tests', () => {
     })
 
     // To reload the page, use the cy.reload() command.
-    it('Test traversal cy.reload() command', () => {
+    it('Test navigation cy.reload() command', () => {
         cy.reload()
         cy.reload(true)
     })
 
     // To visit a remote page, use the cy.visit() command.
-    it.only('Test traversal cy.visit() command', () => {
+    it.only('Test navigation cy.visit() command', () => {
         cy.visit('https://example.cypress.io/commands/navigation',{
             timeout: 50000,
             onBeforeLoad: function(contentWindow){
-
             },
             onLoad: function(contentWindow){
-
             },
         })
     })
