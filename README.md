@@ -1,2 +1,2 @@
 # CYPRESS-PERSONAL-PROJECT
-Craete persoanl project to improve cypress skills
+Create persoanl project to improve cypress skills
